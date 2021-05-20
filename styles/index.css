@@ -1,0 +1,80 @@
+body {
+  font-family: Consolas, monaco, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  margin: 20px;
+  height: calc(100vh - 80px);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+#section1 {
+  background-color: aliceblue;
+}
+
+#section2 {
+  background-color: aliceblue;
+}
+#section3 {
+  background-color: aliceblue;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal > * {
+  flex: 1;
+}
+
+.js-circle {
+  position: relative;
+  margin: 3px;
+  width: 700px;
+  height: 800px;
+  padding-left: 8px;
+}
+a {
+  text-decoration: none;
+  color: #454545;
+}
+a:hover {
+  color: tomato;
+}
+text.legend-labels {
+  font-size: 11px;
+  fill: #fff;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+rect.legend-items:hover {
+  opacity: 0.8;
+}
+h1.js-uni-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  max-width: 250px;
+  font-weight: normal;
+}
+h2.js-rank {
+  top: -6px;
+  right: 20px;
+  color: #fff;
+}
+h3.js-circle-info {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+}
+span {
+  color: #888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
