@@ -1,49 +1,135 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./styles/index.css">
-    </head>
-    <body>
-        <section class="main" id="section1">
-            <h2>Section 1</h2>
-            <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
-        </section>
-        
-        <section class="main" id="section2">
-            <h2>Section 2</h2>
-            <a href="#section3">3</a>
-            <div class="horizontal">
-                <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
-                <p class="glowing">
-                    Nuclear disasters radii.
-                    <br><br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                </p>
 
-            </div>
-            <!-- <div id="container" style="position: relative; height: 90%; width: 90%;"></div> -->
-        </section>
+<head>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
 
-        <section class="main" id="section3">
-            <h2>Energy generation</h2>
-            <a href="#section1">1</a>
-            <div class="horizontal">
-                <div id="collision"></div>
-                <p class="glowing">
-                    Nuclear fission.
-                    <br><br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                </p>
+<body>
+    <section class="main" id="section1">
+        <h2>Hub</h2>
+        <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+    </section>
 
-            </div>
-        </section>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-        <script src="./datamaps.world.min.js"></script>
-        <!-- <script src="./index.js"></script> -->
-        <script src="./d3-scale.v3.min.js"></script>
-        <script src="./collision.js"></script>
-        <script src="./script.js"></script>
-    </body>
+    <section class="main" id="section2">
+        <h2>Section 2</h2>
+        <a href="#section3">3</a>
+        <div class="horizontal">
+            <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
+            <p>
+                Turbinas
+                <br><br>
+                K: El vapor generado en la cámara de evaporación acciona las turbinas de un generador. Una planta
+                nuclear puede producir un promedio de 8.500 GWh en un año.
+                <br>
+                J: La probabilidad de que un accidente suceda es de menos del uno por ciento por año, pero los daños que
+                causan son incalculables en la mayoría de los casos.
+            </p>
+
+        </div>
+        <!-- <div id="container" style="position: relative; height: 90%; width: 90%;"></div> -->
+    </section>
+
+    <section class="main" id="section3">
+        <h2>Energy generation</h2>
+        <a href="#section1">1</a>
+        <div class="horizontal">
+            <div id="collision"></div>
+            <p>
+                Fisión nuclear
+                <br><br>
+                K: La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo.
+                Para esto, se usa combustible nuclear, comúnmente el uranio.
+                <br>
+                J: *Aquí no se*
+
+            </p>
+
+        </div>
+    </section>
+
+    <section class="main" id="section4">
+        <h2>Energy generation</h2>
+        <a href="#section1">1</a>
+        <div class="horizontal">
+            <div id="collision"></div>
+            <p>
+                Vapor de agua
+                <br><br>
+                K: Una vez realizado el proceso de fisión, el calor calienta agua para transformarla en vapor que se
+                usará eventualmente. Dato curioso: Este vapor se suele usar como ejemplo gráfico de la contaminación
+                ambiental, sin embargo, ¡no contamina para nada pues es solo vapor de agua!
+                <br>
+                J: Los efectos de la esxposición a la radiación varían según la cantidad en el tiempo. La radicación
+                puede incluso usarse de manera medicianl, pero también puede causar enfermedades, mutaciones genéticas e
+                incluso la muerte.
+
+            </p>
+
+        </div>
+    </section>
+
+    <section class="main" id="section5">
+        <h2>Energy generation</h2>
+        <a href="#section1">1</a>
+        <div class="horizontal">
+            <div id="collision"></div>
+            <p>
+                Transformador
+                <br><br>
+                K: Francia es uno de los países que más utiliza energía nuclear, y gracias a esto ha aumentado su
+                producción energética. También, la mantención de una planta nuclear es de las más baratas en el ámbito
+                energético.
+                <br>
+                J: Aunque se puede producir mucha energía muy rápidamente, la energía nuclear no es la más eficiente ni
+                la menos contaminante. Además, requiere utilizar combustible y materiales de construcción muy costosos.
+
+            </p>
+
+        </div>
+    </section>
+
+    <section class="main" id="section6">
+        <h2>Energy generation</h2>
+        <a href="#section1">1</a>
+        <div class="horizontal">
+            <div id="collision"></div>
+            <p>
+                Deshechos
+                <br><br>
+                K: *No sé todavía*
+                <br>
+                J: Al día de hoy, no existe una manera del todo adecuada para deshacerse de deshechos radioactivos, por
+                lo que la mayoría de los países que utilizan este recurso suelen enterrar o tirar al mar los deshechos
+                de sus plantas nucleares.
+
+            </p>
+
+        </div>
+    </section>
+
+    <section class="main" id="section7">
+        <h2>Energy generation</h2>
+        <a href="#section1">1</a>
+        <div class="horizontal">
+            <div id="collision"></div>
+            <p>
+                Sala de control
+                <br><br>
+                *Aquí van los comentarios*
+
+            </p>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="./datamaps.world.min.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <script src="./d3-scale.v3.min.js"></script>
+    <script src="./collision.js"></script>
+    <script src="./script.js"></script>
+</body>
+
 </html>
