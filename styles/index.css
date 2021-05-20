@@ -11,17 +11,7 @@ section {
   height: calc(100vh - 80px);
   padding: 40px;
   border-radius: 10px;
-}
-
-#section1 {
-  background-color: aliceblue;
-}
-
-#section2 {
-  background-color: aliceblue;
-}
-#section3 {
-  background-color: aliceblue;
+  background-color: #0f0f0f;
 }
 
 .horizontal {
@@ -77,4 +67,11 @@ span {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+p.glowing {
+  color: greenyellow;
+  text-shadow: 0 0 4px greenyellow;
+  font-size: large;
+  font-weight: 500;
 }

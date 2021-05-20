@@ -4,7 +4,11 @@ var w = 700,
 var nodes = d3.range(300).map(function () {
     return { radius: Math.random() * 12 + 4 };
   }),
-  color = d3.scale.category20();
+  color = d3
+    .scaleLinear()
+    .domain([1, 3])
+    .range(["greenyellow", "#1a9850"])
+    .interpolate(d3.interpolateRgb);
 
 var force = d3.layout
   .force()
