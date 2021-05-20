@@ -1,10 +1,12 @@
 const render = (function () {
   // keys for concentric circles
   const dataKeys = [
-    "studentNumber",
-    "femalePercentRatio",
-    "malePercentRatio",
-    "intlStudentsPercent",
+    "chernobil",
+    "fukushima",
+    "mayak",
+    "threemileisland",
+    "constituyentes",
+    "tokaimura",
   ];
 
   // helpers
@@ -33,15 +35,23 @@ const render = (function () {
   const col = d3
     .scaleOrdinal()
     .domain(dataKeys)
-    .range(["#f1c40f", "#f39c12", "#e67e22", "#c0392b"].reverse());
+    .range(["#f1c40f", "#f39c12", "#e67e22", "#c0392b", "blue"].reverse());
 
   const labels = d3
     .scaleOrdinal()
     .domain(dataKeys)
-    .range(["No. Students: ", "Female %: ", "Male %: ", "International %:"]);
+    .range([
+      "Chernobil, Ukrania",
+      "Fukushima, Japon",
+      "Mayak, Rusia",
+      "Windscale, UK",
+      "Three Mile Island, USA",
+      "Constituyentes, Argentina",
+      "Tokaimura, Japon",
+    ]);
 
   function update(data, bindTo) {
-    const maxStudents = d3.max(data, d => d.studentNumber);
+    const maxStudents = 7;
     // area of each circle taking the highest number of students
     const sqrtScale = d3.scaleSqrt().domain([0, maxStudents]).range([0, 200]);
     // render grid
@@ -61,7 +71,9 @@ const render = (function () {
     const circleInfo = enter
       .append("h3")
       .attr("class", (d, i) => "block js-circle-info js-circle-info-" + i)
-      .html(d => `<span>Staff per student:</span> ${d.studentStaffRatio}`);
+      .html(
+        d => `<span>Fukushima, Japon </span> <br/> <span>${d.fukushima}</span>`
+      );
 
     // append set of circles for each of the datakeys
     // to each grid item
@@ -88,12 +100,7 @@ const render = (function () {
         .append("circle")
         .attr("class", (d, i) => `cc c-${i} ${d.name}`)
         .attr("r", d => {
-          if (d.name == "studentNumber") {
-            return sqrtScale(o[d.name]);
-          } else {
-            let v = students(o.studentNumber, d.value);
-            return sqrtScale(v);
-          }
+          return sqrtScale(o[d.name]);
         })
         .attr("cx", width / 2)
         .attr("cy", height / 2)
@@ -110,7 +117,9 @@ const render = (function () {
     });
 
     function mouseoverValues(key) {
-      circleInfo.html(d => `<span>${labels(key)}</span> ${d[key]}`);
+      circleInfo.html(
+        d => `<span>${labels(key)}</span> <br/> <span>${d[key]}</span>`
+      );
     }
 
     function mouseOverHighlight(index) {
@@ -123,7 +132,7 @@ const render = (function () {
     function mouseOutReset(d) {
       d3.selectAll(".cc").interrupt().transition(t).style("opacity", 1);
       circleInfo.html(
-        d => `<span>Staff per student:</span> ${d.studentStaffRatio}`
+        d => `<span>Fukushima, Japon </span> <br/> <span>${d.fukushima}</span>`
       );
     }
 
