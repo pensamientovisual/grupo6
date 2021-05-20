@@ -69,9 +69,12 @@ span {
   letter-spacing: 3px;
 }
 
-p.glowing {
+.glowing {
   color: greenyellow;
   text-shadow: 0 0 4px greenyellow;
-  font-size: large;
   font-weight: 500;
+}
+
+p {
+  font-size: large;
 }
