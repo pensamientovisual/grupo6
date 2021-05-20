@@ -1,5 +1,6 @@
 body {
   font-family: Consolas, monaco, monospace;
+  margin: 0;
 }
 
 html {
@@ -7,11 +8,17 @@ html {
 }
 
 section {
-  margin: 20px;
+  margin: 20px 0px;
   height: calc(100vh - 80px);
   padding: 40px;
-  border-radius: 10px;
   background-color: #0f0f0f;
+}
+
+section:first-of-type {
+  margin-top: 0;
+}
+section:last-of-type {
+  margin-bottom: 0;
 }
 
 .horizontal {
