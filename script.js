@@ -41,13 +41,13 @@ const render = (function () {
     .scaleOrdinal()
     .domain(dataKeys)
     .range([
-      "Chernobil, Ukrania",
-      "Fukushima, Japon",
-      "Mayak, Rusia",
-      "Windscale, UK",
-      "Three Mile Island, USA",
-      "Constituyentes, Argentina",
-      "Tokaimura, Japon",
+      "Chernobil, Ukrania, 1986",
+      "Fukushima, Japon, 2011",
+      "Mayak, Rusia, 1957",
+      "Windscale, UK, 1957",
+      "Three Mile Island, USA, 1979",
+      "Constituyentes, Argentina, 1983",
+      "Tokaimura, Japon, 1999",
     ]);
 
   function update(data, bindTo) {
@@ -72,7 +72,8 @@ const render = (function () {
       .append("h3")
       .attr("class", (d, i) => "block js-circle-info js-circle-info-" + i)
       .html(
-        d => `<span>Fukushima, Japon </span> <br/> <span>${d.fukushima}</span>`
+        d =>
+          `<span>Fukushima, Japon, 2011 </span> <br/> <span>${d.fukushima}</span>`
       );
 
     // append set of circles for each of the datakeys
@@ -132,7 +133,8 @@ const render = (function () {
     function mouseOutReset(d) {
       d3.selectAll(".cc").interrupt().transition(t).style("opacity", 1);
       circleInfo.html(
-        d => `<span>Fukushima, Japon </span> <br/> <span>${d.fukushima}</span>`
+        d =>
+          `<span>Fukushima, Japon, 2011 </span> <br/> <span>${d.fukushima}</span>`
       );
     }
 
