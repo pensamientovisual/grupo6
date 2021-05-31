@@ -184,3 +184,20 @@ p {
 circle {
   fill: #4a988a;
 }
+
+div.sender {
+  display: flex;
+  align-items: center;
+}
+
+div.sender > span {
+  margin-left: 5px;
+}
+div.sender > img {
+  width: 25px;
+  height: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}

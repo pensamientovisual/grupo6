@@ -14,149 +14,204 @@
         </div>
     </section>
 
-    <section class="main" id="section2">
-        <h2 class="glowing">Section 2</h2>
-        <a href="#section3">3</a>
-        <div class="horizontal">
-            <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
-            <div class="chat">
-                <p>Turbinas</p>
-                <div class="yours messages">
-                    <div class="message last">
-                        El vapor generado en la cámara de evaporación acciona las turbinas de un generador. Una planta
-                nuclear puede producir un promedio de 8.500 GWh en un año.
-                    </div>
-                </div>
-                <div class="mine messages">
-                  <div class="message last">
-                    La probabilidad de que un accidente suceda es de menos del uno por ciento por año, pero los daños que
-                causan son incalculables en la mayoría de los casos.
-                   </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div id="container" style="position: relative; height: 100%; width: 100%;"></div> -->
-    </section>
-
     <section class="main" id="section3">
-        <h2 class="glowing">Energy generation</h2>
+        <h2 class="glowing">Fisión nuclear</h2>
         <a href="#section4">4</a>
         <div class="horizontal">
             <div id="collision"></div>
             <div class="chat">
                 <div class="yours messages">
-                    <div class="message last" onclick="speak('Oh, ¿qué es eso de la izquierda?');">
-                        Oh, ¿qué es eso de la izquierda?
+                    <div class="message">
+                        ¡El primer paso para obtener energía nuclear es la fisión de átomos!
+                    </div>
+                    <div class="message last">
+                        Esto sucede porque los átomos de todo elemento tienen ciertas uniones que requieren energía para mantenerse unidas, y si las separamos ¡podemos obtener energía!
+                    </div>
+                    <div class="sender">
+                        <img src="./img/head_w.png" />
+                        <span>Karen</span>
                     </div>
                 </div>
                 <div class="mine messages">
-                  <div class="message last" onclick="speak('La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo. Para esto, se usa combustible nuclear, comúnmente el uranio.');">
-                    La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo.
-                    Para esto, se usa combustible nuclear, comúnmente el uranio.
+                  <div class="message">
+                    Estar dentro del reactor durante este paso es muy peligroso, por lo que se hace con máquinas.
                    </div>
-                </div>
-                <div class="yours messages">
-                  <div class="message">
-                    Hey!
-                  </div>
-                  <div class="message">
-                    You there?
-                  </div>
-                  <div class="message last">
-                    Hello, how's it going?
-                  </div>
-                </div>
-                <div class="mine messages">
-                  <div class="message">
-                    Great thanks!
-                  </div> 
-                  <div class="message last">
-                    How about you?
+                   <div class="message last">
+                    Puedes simular tu propia fisión <u class="bold">pasando el ratón sobre las partículas en la pantalla</u>.
                    </div>
+                   <div class="sender">
+                       <span>Juanito</span>
+                    <img src="./img/head_m.png" />
+                </div>
                 </div>
               </div>
         </div>
     </section>
 
     <section class="main" id="section4">
-        <h2 class="glowing">Energy generation</h2>
+        <h2 class="glowing">Vapor de agua</h2>
         <a href="#section5">5</a>
         <div class="horizontal">
-            <div id="slider"></div>
+            <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
             <div class="chat">
-                <p>Vapor de agua</p>
                 <div class="yours messages">
+                    <div class="message">
+                        La energía nuclear no se puede usar directamente para obtener electricidad, ¡primero hay que transformarla en energía termal!
+                    </div>
+                    <div class="message">
+                        Esto es para evaporar agua que se usará en el siguiente paso de generación eléctrica.
+                    </div>
                     <div class="message last">
-                        Una vez realizado el proceso de fisión, el calor calienta agua para transformarla en vapor que se
-                usará eventualmente. Dato curioso: Este vapor se suele usar como ejemplo gráfico de la contaminación
-                ambiental, sin embargo, ¡no contamina para nada pues es solo vapor de agua!
+                        Todos los procesos que te mencionaremos son monitoreados constantemente, ¡por lo que son muy seguros!
+                    </div>
+                    <div class="sender">
+                        <img src="./img/head_w.png" />
+                        <span>Karen</span>
                     </div>
                 </div>
                 <div class="mine messages">
-                  <div class="message last">
-                    Los efectos de la esxposición a la radiación varían según la cantidad en el tiempo. La radicación
-                puede incluso usarse de manera medicianl, pero también puede causar enfermedades, mutaciones genéticas e
-                incluso la muerte.
+                  <div class="message">
+                    …bueno, más bien son relativamente seguros.
                    </div>
+                   <div class="message">
+                    A lo largo de la historia han ocurrido algunos accidentes bastante importantes.
+                   </div>
+                   <div class="message last">
+                        Para clasificarlos se usa la escala INES, que va del cero al siete en grados de seriedad. Hemos decidido mostrarte los más importantes, <u class="bold">los puedes observar poniendo el ratón sobre los círculos en la pantalla.</u>
+                   </div>
+                   <div class="sender">
+                       <span>Juanito</span>
+                    <img src="./img/head_m.png" />
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main" id="section2">
+        <h2 class="glowing">Turbinas</h2>
+        <a href="#section3">3</a>
+        <div class="horizontal">
+            <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
+            <div class="chat">
+                <div class="yours messages">
+                    <div class="message">
+                        El vapor de agua obtenido después del proceso de fisión se utiliza en este paso para accionar una serie de turbinas.
+                    </div>
+                    <div class="message">
+                        De esta manera, ¡la energía termal se convierte en energía mecánica! 
+                    </div>
+                    <div class="message last">
+                        Todas las plantas de energía nuclear alrededor del mundo funcionan con este sistema o alguna variación similar.
+                    </div>
+                    <div class="sender">
+                        <img src="./img/head_w.png" />
+                        <span>Karen</span>
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message">
+                    Hablando de plantas nucleares en el mundo, aquí te presentamos un mapa que ubica las plantas nucleares.
+                   </div>
+                   <div class="message">
+                    <u class="bold">Puedes seleccionar su clasificación dando clic al botón correspondiente.</u>
+                   </div>
+                   <div class="message">
+                    Las plantas se clasifican como activas, en construcción, desmanteladas y desconectadas.
+                   </div>
+                   <div class="message last">
+                    Decidimos también mostrarte aquellas donde ha habido accidentes para dar perspectiva sobre este fenómeno.
+                   </div>
+                    <div class="sender">
+                        <span>Juanito</span>
+                        <img src="./img/head_m.png" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="main" id="section5">
-        <h2 class="glowing">Energy generation</h2>
+        <h2 class="glowing">Tranformador</h2>
         <a href="#section6">6</a>
         <div class="horizontal">
             <div id="transformer"></div>
             <div class="chat">
-                <p>Tranformador</p>
                 <div class="yours messages">
+                    <div class="message">
+                        ¡Aquí finalmente obtenemos energía eléctrica! Esto ocurre utilizando un transformador de energía mecánica utilizando un imán.
+                    </div>
                     <div class="message last">
-                        Francia es uno de los países que más utiliza energía nuclear, y gracias a esto ha aumentado su
-                producción energética. También, la mantención de una planta nuclear es de las más baratas en el ámbito
-                energético.
+                        Luego, ¡esta electricidad puede ser repartida a todos lados! Además, como el transformador es bastante estándar, ¡los costos de mantención son muy reducidos!
+                    </div>
+                    <div class="sender">
+                        <img src="./img/head_w.png" />
+                        <span>Karen</span>
                     </div>
                 </div>
                 <div class="mine messages">
-                  <div class="message last">
-                    Aunque se puede producir mucha energía muy rápidamente, la energía nuclear no es la más eficiente ni
-                    la menos contaminante. Además, requiere utilizar combustible y materiales de construcción muy costosos.
+                  <div class="message">
+                    Bueno, los costos de mantención pueden ser reducidos, pero existen otros costos que se deben considerar, como los costos ambientales y humanitarios.
                    </div>
+                   <div class="message last">
+                    Los gráficos que te mostramos comparan algunos de los costos más importantes en comparación a otros medios de producción energética.
+                   </div>
+                   <div class="sender">
+                    <span>Juanito</span>
+                    <img src="./img/head_m.png" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="main" id="section6">
-        <h2 class="glowing">Energy generation</h2>
+        <h2 class="glowing">Torre de enfriamiento</h2>
         <a href="#section7">7</a>
         <div class="horizontal">
-            <canvas id="waste" width="960" height="600"></canvas>
+            <canvas id="waste" width="860" height="600"></canvas>
             <div class="chat">
-                <p>Desechos</p>
                 <div class="yours messages">
+                    <div class="message">
+                        El último paso que ocurre en la planta es el desecho de residuos y el enfriamiento del agua utilizada.
+                    </div>
+                    <div class="message">
+                        Mucho del vapor de agua utilizado se puede volver a usar, y el resto se retorna a la atmósfera.
+                    </div>
                     <div class="message last">
-                        *No sé todavía*
+                        Este vapor tiene muy poco impacto en el ambiente, ¡por lo que emiten menos dióxido de carbono que la mayoría de los generadores eléctricos renovables!
+                    </div>
+                    <div class="sender">
+                        <img src="./img/head_w.png" />
+                        <span>Karen</span>
                     </div>
                 </div>
                 <div class="mine messages">
-                  <div class="message last">
-                      Al día de hoy, no existe una manera del todo adecuada para deshacerse de deshechos radioactivos, por
-                lo que la mayoría de los países que utilizan este recurso suelen enterrar o tirar al mar los deshechos
-                de sus plantas nucleares.
+                  <div class="message">
+                    Es cierto que las emisiones de dióxido de carbono son relativamente bajas, pero existen otros contaminantes presentes en los deshechos.
                    </div>
+                   <div class="message">
+                    Mucho del combustible sigue siendo radiactivo después de mucho tiempo, y por el momento no existen soluciones concretas para deshacerse de estos desechos.
+                   </div>
+                   <div class="message last">
+                    Los efectos de estos materiales en el cuerpo humano pueden ser muy severos, 
+                    <u class="bold">los puedes observar usando el deslizador en pantalla.</u>
+                   </div>
+                   <div class="sender">
+                    <span>Juanito</span>
+                    <img src="./img/head_m.png" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="main" id="section7">
-        <h2 class="glowing">Energy generation</h2>
+        <h2 class="glowing">Sala de control</h2>
         <a href="#section1">Home</a>
         <div class="horizontal">
             <svg id="radioactivity" width="250" height="100"></svg>
             <p class="glowing">
-                Sala de control
                 <br><br>
                 *Aquí van los comentarios*
 

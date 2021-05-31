@@ -25,7 +25,7 @@ context.fillStyle = "rgba(0,0,0,.2)";
 context.fill("evenodd");
 context.restore();
 
-context.fillStyle = "rgba(255,0,0,.5)";
+context.fillStyle = "rgba(95,23,98,.8)";
 d3.timer(function () {
   for (var i = 0; i < numSamplesPerFrame; ++i) {
     var a = Math.random() * 2 * Math.PI,
