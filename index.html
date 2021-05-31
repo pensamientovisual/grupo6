@@ -19,16 +19,21 @@
         <a href="#section3">3</a>
         <div class="horizontal">
             <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
-            <p class="glowing">
-                Turbinas
-                <br><br>
-                K: El vapor generado en la cámara de evaporación acciona las turbinas de un generador. Una planta
+            <div class="chat">
+                <p>Turbinas</p>
+                <div class="yours messages">
+                    <div class="message last">
+                        El vapor generado en la cámara de evaporación acciona las turbinas de un generador. Una planta
                 nuclear puede producir un promedio de 8.500 GWh en un año.
-                <br>
-                J: La probabilidad de que un accidente suceda es de menos del uno por ciento por año, pero los daños que
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message last">
+                    La probabilidad de que un accidente suceda es de menos del uno por ciento por año, pero los daños que
                 causan son incalculables en la mayoría de los casos.
-            </p>
-
+                   </div>
+                </div>
+            </div>
         </div>
         <!-- <div id="container" style="position: relative; height: 90%; width: 90%;"></div> -->
     </section>
@@ -38,16 +43,38 @@
         <a href="#section4">4</a>
         <div class="horizontal">
             <div id="collision"></div>
-            <p class="glowing">
-                Fisión nuclear
-                <br><br>
-                K: La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo.
-                Para esto, se usa combustible nuclear, comúnmente el uranio.
-                <br>
-                J: *Aquí no se*
-
-            </p>
-
+            <div class="chat">
+                <div class="yours messages">
+                    <div class="message last" onclick="speak('Oh, ¿qué es eso de la izquierda?');">
+                        Oh, ¿qué es eso de la izquierda?
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message last" onclick="speak('La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo. Para esto, se usa combustible nuclear, comúnmente el uranio.');">
+                    La energía nuclear se obtiene a través de la fisión de átomos, es decir, cuando dividimos su núcleo.
+                    Para esto, se usa combustible nuclear, comúnmente el uranio.
+                   </div>
+                </div>
+                <div class="yours messages">
+                  <div class="message">
+                    Hey!
+                  </div>
+                  <div class="message">
+                    You there?
+                  </div>
+                  <div class="message last">
+                    Hello, how's it going?
+                  </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message">
+                    Great thanks!
+                  </div> 
+                  <div class="message last">
+                    How about you?
+                   </div>
+                </div>
+              </div>
         </div>
     </section>
 
@@ -55,20 +82,24 @@
         <h2 class="glowing">Energy generation</h2>
         <a href="#section5">5</a>
         <div class="horizontal">
-            <div id="collision"></div>
-            <p class="glowing">
-                Vapor de agua
-                <br><br>
-                K: Una vez realizado el proceso de fisión, el calor calienta agua para transformarla en vapor que se
+            <div id="slider"></div>
+            <div class="chat">
+                <p>Vapor de agua</p>
+                <div class="yours messages">
+                    <div class="message last">
+                        Una vez realizado el proceso de fisión, el calor calienta agua para transformarla en vapor que se
                 usará eventualmente. Dato curioso: Este vapor se suele usar como ejemplo gráfico de la contaminación
                 ambiental, sin embargo, ¡no contamina para nada pues es solo vapor de agua!
-                <br>
-                J: Los efectos de la esxposición a la radiación varían según la cantidad en el tiempo. La radicación
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message last">
+                    Los efectos de la esxposición a la radiación varían según la cantidad en el tiempo. La radicación
                 puede incluso usarse de manera medicianl, pero también puede causar enfermedades, mutaciones genéticas e
                 incluso la muerte.
-
-            </p>
-
+                   </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -76,19 +107,23 @@
         <h2 class="glowing">Energy generation</h2>
         <a href="#section6">6</a>
         <div class="horizontal">
-            <div id="collision"></div>
-            <p class="glowing"> 
-                Transformador
-                <br><br>
-                K: Francia es uno de los países que más utiliza energía nuclear, y gracias a esto ha aumentado su
+            <div id="transformer"></div>
+            <div class="chat">
+                <p>Tranformador</p>
+                <div class="yours messages">
+                    <div class="message last">
+                        Francia es uno de los países que más utiliza energía nuclear, y gracias a esto ha aumentado su
                 producción energética. También, la mantención de una planta nuclear es de las más baratas en el ámbito
                 energético.
-                <br>
-                J: Aunque se puede producir mucha energía muy rápidamente, la energía nuclear no es la más eficiente ni
-                la menos contaminante. Además, requiere utilizar combustible y materiales de construcción muy costosos.
-
-            </p>
-
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message last">
+                    Aunque se puede producir mucha energía muy rápidamente, la energía nuclear no es la más eficiente ni
+                    la menos contaminante. Además, requiere utilizar combustible y materiales de construcción muy costosos.
+                   </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -96,18 +131,22 @@
         <h2 class="glowing">Energy generation</h2>
         <a href="#section7">7</a>
         <div class="horizontal">
-            <div id="collision"></div>
-            <p class="glowing">
-                Deshechos
-                <br><br>
-                K: *No sé todavía*
-                <br>
-                J: Al día de hoy, no existe una manera del todo adecuada para deshacerse de deshechos radioactivos, por
+            <canvas id="waste" width="960" height="600"></canvas>
+            <div class="chat">
+                <p>Desechos</p>
+                <div class="yours messages">
+                    <div class="message last">
+                        *No sé todavía*
+                    </div>
+                </div>
+                <div class="mine messages">
+                  <div class="message last">
+                      Al día de hoy, no existe una manera del todo adecuada para deshacerse de deshechos radioactivos, por
                 lo que la mayoría de los países que utilizan este recurso suelen enterrar o tirar al mar los deshechos
                 de sus plantas nucleares.
-
-            </p>
-
+                   </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -115,7 +154,7 @@
         <h2 class="glowing">Energy generation</h2>
         <a href="#section1">Home</a>
         <div class="horizontal">
-            <div id="collision"></div>
+            <svg id="radioactivity" width="250" height="100"></svg>
             <p class="glowing">
                 Sala de control
                 <br><br>
@@ -126,13 +165,26 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script>
+        function speak(text) {
+            var msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'es';
+            speechSynthesis.speak(msg);
+        }
+    </script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="https://d3js.org/d3-random.v2.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
     <script src="./datamaps.world.min.js"></script>
-    <!-- <script src="./index.js"></script> -->
+    <script src="./index.js"></script>
     <script src="./d3-scale.v3.min.js"></script>
     <script src="./collision.js"></script>
     <script src="./script.js"></script>
+    <script src="./waste.js"></script>
+    <!-- <script src="./radioactivity.js"></script> -->
+    </script>
 </body>
 
 </html>
