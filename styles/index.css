@@ -27,6 +27,7 @@ section:last-of-type {
   display: flex;
   align-items: center;
   flex: 1;
+  padding: 100px;
 }
 
 .horizontal > * {
@@ -200,4 +201,33 @@ div.sender > img {
 
 .bold {
   font-weight: bold;
+}
+
+.typewriter {
+  flex: 1;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+#slider-content {
+  height: 50px;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.circle-data {
+  display: flex;
+  align-items: center;
+}
+
+.circle-info {
+  margin-left: 5px;
 }

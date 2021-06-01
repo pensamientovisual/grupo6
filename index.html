@@ -4,21 +4,40 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
+<body class="stop-scrolling">
+
     <section class="main" id="section1">
-        <h2 class="glowing">Hub</h2>
+        <div style="flex: 1">
+            <h1 class="glowing typewriter"></h1>
+            <div id="name-wrapper" hidden>
+                <input id="name" placeholder="Nombre"></input>
+                <button onclick="onClick();">Continuar</button>
+            </div>
+        </div>
+    </section>
+    <section class="main" id="section2">
+        <div style="position: absolute;">
+            <h2 class="glowing">Centro de operaciones</h2>
+            <p class="glowing" id="typewriter-2"></p>
+        </div>
         <div class="horizontal">
-            <a href="#section2"><img src="img/img1.png" href="#section2" /></a>
+            <a href="#section3" style="margin: 150px;">
+                <object id="nuclear-plant" type="image/svg+xml" data="./img/diagrama.svg"></object>
+            </a>
         </div>
     </section>
 
     <section class="main" id="section3">
-        <h2 class="glowing">Fisión nuclear</h2>
-        <a href="#section4">4</a>
+        <div class="navigation">
+            <h2 class="glowing">Fisión nuclear</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section2">⏮</a>
+            <a href="#section4">⏭</a>
+        </div>
         <div class="horizontal">
-            <div id="collision"></div>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -45,12 +64,17 @@
                 </div>
                 </div>
               </div>
+              <div id="collision"></div>
         </div>
     </section>
 
     <section class="main" id="section4">
-        <h2 class="glowing">Vapor de agua</h2>
-        <a href="#section5">5</a>
+        <div class="navigation">
+            <h2 class="glowing">Vapor de agua</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section3">⏮</a>
+            <a href="#section5">⏭</a>
+        </div>
         <div class="horizontal">
             <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
             <div class="chat">
@@ -88,11 +112,20 @@
         </div>
     </section>
 
-    <section class="main" id="section2">
-        <h2 class="glowing">Turbinas</h2>
-        <a href="#section3">3</a>
+    <section class="main" id="section5">
+        <div class="navigation">
+            <h2 class="glowing">Turbinas</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section4">⏮</a>
+            <a href="#section6">⏭</a>
+        </div>
         <div class="horizontal">
-            <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
+            <div>
+                <object type="image/svg+xml" data="./img/map.svg"></object>
+                <div class="circle-data" data-attr="act">
+                    <div class="circle" style="background-color: yellow;"></div><span class="circle-info">Activas</span>
+                </div>
+            </div>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -131,9 +164,13 @@
         </div>
     </section>
 
-    <section class="main" id="section5">
-        <h2 class="glowing">Tranformador</h2>
-        <a href="#section6">6</a>
+    <section class="main" id="section6">
+        <div class="navigation">
+            <h2 class="glowing">Transformador</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section5">⏮</a>
+            <a href="#section7">⏭</a>
+        </div>
         <div class="horizontal">
             <div id="transformer"></div>
             <div class="chat">
@@ -165,11 +202,21 @@
         </div>
     </section>
 
-    <section class="main" id="section6">
-        <h2 class="glowing">Torre de enfriamiento</h2>
-        <a href="#section7">7</a>
+    <section class="main" id="section7">
+        <div class="navigation">
+            <h2 class="glowing">Torre de enfriamiento</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section6">⏮</a>
+            <a href="#section8">⏭</a>
+        </div>
         <div class="horizontal">
-            <canvas id="waste" width="860" height="600"></canvas>
+            <!-- <canvas id="waste" width="860" height="600"></canvas> -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img id="slider-img" width="600" height="800" />
+                <input style="margin-top: -200px;" id="slide" type="range" min="1" max="7" value="1" oninput="displayValue(event)" />
+                <span id="val" style="text-align: center;"></span>
+                <div id="slider-content"></div>
+            </div>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -206,9 +253,12 @@
         </div>
     </section>
 
-    <section class="main" id="section7">
-        <h2 class="glowing">Sala de control</h2>
-        <a href="#section1">Home</a>
+    <section class="main" id="section8">
+        <div class="navigation">
+            <h2 class="glowing">Sala de control</h2>
+            <a href="#section2">Inicio</a>
+            <a href="#section7">⏮</a>
+        </div>
         <div class="horizontal">
             <svg id="radioactivity" width="250" height="100"></svg>
             <p class="glowing">
@@ -219,19 +269,11 @@
 
         </div>
     </section>
-
-    <script>
-        function speak(text) {
-            var msg = new SpeechSynthesisUtterance();
-            msg.text = text;
-            msg.lang = 'es';
-            speechSynthesis.speak(msg);
-        }
-    </script>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="https://d3js.org/d3-random.v2.min.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <script src="./datamaps.world.min.js"></script>
     <script src="./index.js"></script>
     <script src="./d3-scale.v3.min.js"></script>
@@ -239,6 +281,63 @@
     <script src="./script.js"></script>
     <script src="./waste.js"></script>
     <!-- <script src="./radioactivity.js"></script> -->
+    <script src="assets/slider.js"></script>
+    <script>
+
+        window.onload = function() {
+            const svgBaseDocument = document.getElementById("nuclear-plant").contentDocument;
+            svgBaseDocument.getElementById("Capa_6").addEventListener("click", () => {
+                document.getElementById("section3").scrollIntoView();
+            });
+            svgBaseDocument.getElementById("Capa_4").addEventListener("click", () => {
+                document.getElementById("section5").scrollIntoView();
+            });
+            svgBaseDocument.getElementById("Capa_11").addEventListener("click", () => {
+                document.getElementById("section4").scrollIntoView();
+            });
+            svgBaseDocument.getElementById("Capa_5").addEventListener("click", () => {
+                document.getElementById("section8").scrollIntoView();
+            });
+            svgBaseDocument.getElementById("Capa_3").addEventListener("click", () => {
+                document.getElementById("section6").scrollIntoView();
+            });
+    
+            function onClick(){
+                // document.body.classList.remove("stop-scrolling");
+                document.getElementById("section2").scrollIntoView();
+            }
+
+            const circleData = document.querySelectorAll('.circle-data');
+            circleData.forEach(el => {
+                el.addEventListener('click', event => {
+                    event.preventDefault();
+                    if (event.target !== el) {
+                        console.log('clicked');
+                    }
+                })
+            });
+    
+            new TypeIt(".typewriter", {
+                strings: ["¡Hola, te tenemos buenas noticias!<br/>", "Tu solicitud para trabajar en nuestra planta de energía nuclear ha sido aceptada, y te daremos un tour por las instalaciones para que aprendas todo sobre ella.", "Como trabajar en la planta es algo riesgoso, te pedimos atentamente que firmes en el cuadro de texto de abajo para evitar cualquier tipo de acción legal en caso de lesión."],
+                speed: 50,
+                waitUntilVisible: true,
+                afterComplete: async (step, instance) => {
+                    const nameElem = document.getElementById("name-wrapper");
+                    nameElem.removeAttribute("hidden");
+                }
+            }).go();
+
+            new TypeIt("#typewriter-2", {
+                strings: "Haz clic en el lugar de la planta que quieras visitar.",
+                speed: 50,
+                waitUntilVisible: true,
+                afterComplete: async (step, instance) => {
+                    const nameElem = document.getElementById("name-wrapper");
+                    nameElem.removeAttribute("hidden");
+                }
+            }).go();
+        };
+    </script>
     </script>
 </body>
 
