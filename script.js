@@ -34,7 +34,7 @@ const render = (function () {
     },
     mayak: {
       deaths: "200",
-      radius: "Indeterminado",
+      radius: "~16km",
       comment:
         "Ocurrió durante la guerra fría, por lo que hubo una secretismo total, manteniéndose en cubierto durante 2 décadas.",
     },
@@ -72,7 +72,7 @@ const render = (function () {
   const col = d3
     .scaleOrdinal()
     .domain(dataKeys)
-    .range(["#f1c40f", "#f39c12", "#e67e22", "#c0392b", "blue"].reverse());
+    .range(["#d6f789", "#adf046", "#64e31a", "#27801d", "#114715"].reverse());
 
   const labels = d3
     .scaleOrdinal()
@@ -90,7 +90,7 @@ const render = (function () {
   function update(data, bindTo) {
     const maxStudents = 7;
     // area of each circle taking the highest number of students
-    const sqrtScale = d3.scaleSqrt().domain([0, maxStudents]).range([0, 200]);
+    const sqrtScale = d3.scaleSqrt().domain([0, maxStudents]).range([0, 300]);
     // render grid
     const update = d3.select(bindTo).selectAll(".js-circle").data(data);
 
@@ -107,6 +107,7 @@ const render = (function () {
     // label for selected circle
     const circleInfo = enter
       .append("h3")
+      .style("bottom", "-105px")
       .attr("class", (d, i) => "block js-circle-info js-circle-info-" + i)
       .html(
         d =>
@@ -159,7 +160,7 @@ const render = (function () {
         d =>
           `<span>${labels(key)}</span> <br/> <span>INES ${
             d[key]
-          }</span><br><span>${moreData[key].comment}</span><span>Muertes: ${
+          }</span><br><span>${moreData[key].comment}</span><br><span>Muertes: ${
             moreData[key].deaths
           }</span><br><span>Radio: ${moreData[key].radius}</span>`
       );
