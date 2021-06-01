@@ -288,16 +288,13 @@
             <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
-            <svg id="radioactivity" width="250" height="100"></svg>
-            <p class="glowing">
-                <br><br>
-                *Aquí van los comentarios*
-
-            </p>
-
+            <div id="comments-container" style="max-height: 600px; overflow: scroll;"></div>
+            <input id="comment-input" placeholder="Escribe tu comentario aquí"/>
+            <button onclick="handleOnclick();" style="max-width: 100px;">Enviar</button>
         </div>
     </section>
     <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="https://d3js.org/d3-random.v2.min.js"></script>
     <script src="https://unpkg.com/d3-simple-slider"></script>
@@ -311,6 +308,17 @@
     <!-- <script src="./radioactivity.js"></script> -->
     <script src="assets/slider.js"></script>
     <script>
+
+        function handleOnclick() {
+            const name = document.getElementById("name").value;
+            const comment = document.getElementById("comment-input").value;
+            const container = document.getElementById("comments-container");
+            const node = document.createElement('div');
+            node.style.margin = "50px 0px";
+            node.innerHTML = `<img src="../img/comentarios.svg" width=50 height=50 /><br><span>${name}</span><br><span>${comment}</span>`
+            container.appendChild(node);
+        } 
+
         window.onload = function() {
             const graphLinks = {
                 r_const: "Capa_2",
@@ -438,6 +446,29 @@
                 // document.body.classList.remove("stop-scrolling");
                 document.getElementById("section2").scrollIntoView();
             }
+            
+            const url = 'https://little-sister.herokuapp.com/users/opinions';
+
+            axios.get(url)
+            .then(function (response) {
+                // handle success
+                const { data } = response;
+                const container = document.getElementById("comments-container");
+                data.forEach(element => {
+                    const { name, comment } = element;
+                    const node = document.createElement('div');
+                    node.style.margin = "50px 0px";
+                    node.innerHTML = `<img src="../img/comentarios.svg" width=50 height=50 /><br><span>${name}</span><br><span>${comment}</span>`
+                    container.appendChild(node)
+                });
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
         };
     </script>
     </script>
