@@ -42,11 +42,11 @@ section:last-of-type {
   padding-left: 8px;
 }
 a {
+  color: greenyellow;
   text-decoration: none;
-  color: #454545;
 }
 a:hover {
-  color: tomato;
+  color: #f13bfb;
 }
 text.legend-labels {
   font-size: 11px;
@@ -95,6 +95,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  max-width: 500px;
 }
 
 .messages {
@@ -221,13 +222,16 @@ div.sender > img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  border: 2px solid aliceblue;
 }
 
 .circle-data {
   display: flex;
+  cursor: pointer;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .circle-info {
-  margin-left: 5px;
+  margin-left: 10px;
 }
