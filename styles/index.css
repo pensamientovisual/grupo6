@@ -43,7 +43,6 @@ section:last-of-type {
 }
 a {
   color: greenyellow;
-  text-decoration: none;
 }
 a:hover {
   color: #f13bfb;
@@ -234,4 +233,8 @@ div.sender > img {
 
 .circle-info {
   margin-left: 10px;
+}
+
+#name-wrapper {
+  margin-top: 100px;
 }

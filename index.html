@@ -8,7 +8,6 @@
 </head>
 
 <body class="stop-scrolling">
-
     <section class="main" id="section1">
         <div style="flex: 1">
             <h1 class="glowing typewriter"></h1>
@@ -33,9 +32,7 @@
     <section class="main" id="section3">
         <div class="navigation">
             <h2 class="glowing">Fisión nuclear</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section2">⏮</a>
-            <a href="#section4">⏭</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
             <div class="chat">
@@ -71,9 +68,7 @@
     <section class="main" id="section4">
         <div class="navigation">
             <h2 class="glowing">Cámara de vapor</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section3">⏮</a>
-            <a href="#section5">⏭</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
             <div id="vis" class="flex flex-wrap max-width-1600 mx-auto my2 js-circles"></div>
@@ -115,9 +110,7 @@
     <section class="main" id="section5">
         <div class="navigation">
             <h2 class="glowing">Turbinas</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section4">⏮</a>
-            <a href="#section6">⏭</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
             <div>
@@ -184,12 +177,10 @@
     <section class="main" id="section6">
         <div class="navigation">
             <h2 class="glowing">Transformador</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section5">⏮</a>
-            <a href="#section7">⏭</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
-            <object type="image/svg+xml" data="./img/graficos.svg"></object>
+            <object id="graphs" type="image/svg+xml" data="./img/graficos.svg"></object>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -222,9 +213,7 @@
     <section class="main" id="section7">
         <div class="navigation">
             <h2 class="glowing">Torre de enfriamiento</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section6">⏮</a>
-            <a href="#section8">⏭</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
             <!-- <canvas id="waste" width="860" height="600"></canvas> -->
@@ -273,8 +262,7 @@
     <section class="main" id="section8">
         <div class="navigation">
             <h2 class="glowing">Sala de control</h2>
-            <a href="#section2">Inicio</a>
-            <a href="#section7">⏮</a>
+            <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
             <svg id="radioactivity" width="250" height="100"></svg>
@@ -309,6 +297,7 @@
         window.onload = function() {
             const svgBaseDocument = document.getElementById("nuclear-plant").contentDocument;
             const svgMapBaseDocument = document.getElementById("svg-map").contentDocument;
+            const svgGraphsBaseDocument = document.getElementById("graphs").contentDocument;
 
             svgMapBaseDocument.getElementById("Capa_1").style.visibility = "hidden";
 
@@ -341,7 +330,15 @@
                 }
             }
 
+            // make all graphs hidden
+            function resetGraphs() {
+                for (let index = 3; index < 9; index++) {
+                    svgGraphsBaseDocument.getElementById(`Capa_${index}_1_`).style.visibility = "hidden";
+                }
+            }
+
             reset();
+            resetGraphs();
 
             const circleData = document.querySelectorAll('.circle-data');
             circleData.forEach(el => {

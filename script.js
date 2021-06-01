@@ -9,6 +9,18 @@ const render = (function () {
     "tokaimura",
   ];
 
+  const moreData = {
+    chernobil: {
+      deaths: 9000,
+      radius: "~30km",
+      comment: "Es el accidente más mediático de la historia.",
+    },
+    constituyentes: {
+      comment:
+        "Como el accidente ocurrió durante dictadura, durante mucho tiempo el gobierno argentino intentó esconder el incidente.",
+    },
+  };
+
   // helpers
   const width = 700;
   const height = 800;
@@ -119,7 +131,10 @@ const render = (function () {
 
     function mouseoverValues(key) {
       circleInfo.html(
-        d => `<span>${labels(key)}</span> <br/> <span>${d[key]}</span>`
+        d =>
+          `<span>${labels(key)}</span> <br/> <span>${d[key]}</span><br><span>${
+            moreData[key].comment
+          }</span>`
       );
     }
 
