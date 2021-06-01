@@ -25,7 +25,7 @@
         </div>
         <div class="horizontal">
             <a href="#section3" style="margin: 150px;">
-                <object id="nuclear-plant" type="image/svg+xml" data="./img/diagrama.svg"></object>
+                <object id="nuclear-plant" type="image/svg+xml" data="./img/esquema.svg"></object>
             </a>
         </div>
     </section>
@@ -212,8 +212,8 @@
         <div class="horizontal">
             <!-- <canvas id="waste" width="860" height="600"></canvas> -->
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <img id="slider-img" width="600" height="800" />
-                <input style="margin-top: -200px;" id="slide" type="range" min="1" max="7" value="1" oninput="displayValue(event)" />
+                <img id="slider-img" width="600" height="1200" />
+                <input style="margin-top: -300px;" id="slide" type="range" min="1" max="7" value="1" oninput="displayValue(event)" />
                 <span id="val" style="text-align: center;"></span>
                 <div id="slider-content"></div>
             </div>
@@ -286,14 +286,18 @@
 
         window.onload = function() {
             const svgBaseDocument = document.getElementById("nuclear-plant").contentDocument;
-            svgBaseDocument.getElementById("Capa_6").addEventListener("click", () => {
+            svgBaseDocument.getElementById("Capa_XX").addEventListener("click", (e) => {
+                console.log(e.target);
                 document.getElementById("section3").scrollIntoView();
+            });
+            svgBaseDocument.getElementById("Capa_15").addEventListener("click", () => {
+                document.getElementById("section4").scrollIntoView();
             });
             svgBaseDocument.getElementById("Capa_4").addEventListener("click", () => {
                 document.getElementById("section5").scrollIntoView();
             });
             svgBaseDocument.getElementById("Capa_11").addEventListener("click", () => {
-                document.getElementById("section4").scrollIntoView();
+                document.getElementById("section7").scrollIntoView();
             });
             svgBaseDocument.getElementById("Capa_5").addEventListener("click", () => {
                 document.getElementById("section8").scrollIntoView();
