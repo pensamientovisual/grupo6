@@ -180,7 +180,30 @@
             <a href="#section2">Volver a la central</a>
         </div>
         <div class="horizontal">
-            <object id="graphs" type="image/svg+xml" data="./img/graficos.svg"></object>
+            <div style="padding: 100px;">
+                <object id="graphs" type="image/svg+xml" data="./img/graficos.svg"></object>
+                
+                <input type="radio" id="r-const" name="graph" value="r_const" checked>
+                <label for="r-const"><span>Construcción</span></label><br>
+                
+                <input type="radio" id="r-mant" name="graph" value="r_mant">
+                <label for="r-mant"><span>Mantención</span></label><br>
+                
+                <input type="radio" id="r-desm" name="graph" value="r_desm">
+                <label for="r-desm"><span>Desmantelamiento</span></label><br>
+
+                <input type="radio" id="r-ener" name="graph" value="r_ener">
+                <label for="r-ener"><span>Energía al año</span></label><br>
+
+                <input type="radio" id="r-cont" name="graph" value="r_cont">
+                <label for="r-cont"><span>Contaminación</span></label><br>
+
+                <input type="radio" id="r-hum" name="graph" value="r_hum">
+                <label for="r-hum"><span>Humanos</span></label><br>
+
+                <input type="radio" id="r-efec" name="graph" value="r_efec">
+                <label for="r-efec"><span>Efectividad</span></label><br>
+            </div>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -288,13 +311,17 @@
     <!-- <script src="./radioactivity.js"></script> -->
     <script src="assets/slider.js"></script>
     <script>
-
-        function onClick(){
-            // document.body.classList.remove("stop-scrolling");
-            document.getElementById("section2").scrollIntoView();
-        }
-
         window.onload = function() {
+            const graphLinks = {
+                r_const: "Capa_2",
+                r_mant: "Capa_3_1_",
+                r_desm: "Capa_4_1_",
+                r_ener: "Capa_5_1_",
+                r_cont: "Capa_6_1_",
+                r_hum: "Capa_7_1_",
+                r_efec: "Capa_8_1_",
+            };
+
             const svgBaseDocument = document.getElementById("nuclear-plant").contentDocument;
             const svgMapBaseDocument = document.getElementById("svg-map").contentDocument;
             const svgGraphsBaseDocument = document.getElementById("graphs").contentDocument;
@@ -332,6 +359,7 @@
 
             // make all graphs hidden
             function resetGraphs() {
+                svgGraphsBaseDocument.getElementById("Capa_2").style.visibility = "hidden";
                 for (let index = 3; index < 9; index++) {
                     svgGraphsBaseDocument.getElementById(`Capa_${index}_1_`).style.visibility = "hidden";
                 }
@@ -339,6 +367,7 @@
 
             reset();
             resetGraphs();
+            svgGraphsBaseDocument.getElementById(`Capa_2`).style.visibility = "initial";
 
             const circleData = document.querySelectorAll('.circle-data');
             circleData.forEach(el => {
@@ -394,6 +423,21 @@
                     nameElem.removeAttribute("hidden");
                 }
             }).go();
+
+            function onCheckedRadioButton(event) {
+                const { target: { value } } = event;
+                resetGraphs();
+                svgGraphsBaseDocument.getElementById(graphLinks[value]).style.visibility = "initial";
+            }
+
+            document.querySelectorAll("input[name='graph']").forEach((input) => {
+                input.addEventListener('change', onCheckedRadioButton);
+            });
+
+            function onClick(){
+                // document.body.classList.remove("stop-scrolling");
+                document.getElementById("section2").scrollIntoView();
+            }
         };
     </script>
     </script>
