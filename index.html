@@ -309,6 +309,11 @@
     <script src="assets/slider.js"></script>
     <script>
 
+            function onClick(){
+                // document.body.classList.remove("stop-scrolling");
+                document.getElementById("section2").scrollIntoView();
+            }
+
         function handleOnclick() {
             const name = document.getElementById("name").value;
             const comment = document.getElementById("comment-input").value;
@@ -442,10 +447,6 @@
                 input.addEventListener('change', onCheckedRadioButton);
             });
 
-            function onClick(){
-                // document.body.classList.remove("stop-scrolling");
-                document.getElementById("section2").scrollIntoView();
-            }
             
             const url = 'https://little-sister.herokuapp.com/users/opinions';
 

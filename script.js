@@ -16,8 +16,33 @@ const render = (function () {
       comment: "Es el accidente más mediático de la historia.",
     },
     constituyentes: {
+      deaths: "1",
+      radius: "~10km",
       comment:
         "Como el accidente ocurrió durante dictadura, durante mucho tiempo el gobierno argentino intentó esconder el incidente.",
+    },
+    threemileisland: {
+      deaths: "0",
+      radius: "~16km",
+      comment:
+        "A pesar de que no hubo muertos, se reportó un aumento significativo en el riesgo de padecer un cáncer en la población local.",
+    },
+    fukushima: {
+      deaths: "1600",
+      radius: "~80km",
+      comment: "Impulsó el movimiento anti-nuclear a nivel mundial.",
+    },
+    mayak: {
+      deaths: "200",
+      radius: "Indeterminado",
+      comment:
+        "Ocurrió durante la guerra fría, por lo que hubo una secretismo total, manteniéndose en cubierto durante 2 décadas.",
+    },
+    tokaimura: {
+      deaths: "2",
+      radius: "~10km",
+      comment:
+        "El incidente resultó en una baja notable en la producción agrícola local.",
     },
   };
 
@@ -85,7 +110,7 @@ const render = (function () {
       .attr("class", (d, i) => "block js-circle-info js-circle-info-" + i)
       .html(
         d =>
-          `<span>Fukushima, Japon, 2011 </span> <br/> <span>${d.fukushima}</span>`
+          `<span>Fukushima, Japon, 2011 </span> <br/> <span>INES ${d.fukushima}</span><br><span>Muertes: ${moreData["fukushima"].deaths}</span><br><span>Radio: ${moreData["fukushima"].radius}</span>`
       );
 
     // append set of circles for each of the datakeys
@@ -132,9 +157,11 @@ const render = (function () {
     function mouseoverValues(key) {
       circleInfo.html(
         d =>
-          `<span>${labels(key)}</span> <br/> <span>${d[key]}</span><br><span>${
-            moreData[key].comment
-          }</span>`
+          `<span>${labels(key)}</span> <br/> <span>INES ${
+            d[key]
+          }</span><br><span>${moreData[key].comment}</span><span>Muertes: ${
+            moreData[key].deaths
+          }</span><br><span>Radio: ${moreData[key].radius}</span>`
       );
     }
 
@@ -149,7 +176,7 @@ const render = (function () {
       d3.selectAll(".cc").interrupt().transition(t).style("opacity", 1);
       circleInfo.html(
         d =>
-          `<span>Fukushima, Japon, 2011 </span> <br/> <span>${d.fukushima}</span>`
+          `<span>Fukushima, Japon, 2011 </span> <br/> <span>INES ${d.fukushima}</span><br><span>${moreData["fukushima"].comment}</span><br><span>Muertes: ${moreData["fukushima"].deaths}</span><br><span>Radio: ${moreData["fukushima"].radius}</span>`
       );
     }
 
