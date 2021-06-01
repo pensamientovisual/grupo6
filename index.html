@@ -289,8 +289,13 @@
         </div>
         <div class="horizontal">
             <div id="comments-container" style="max-height: 600px; overflow: scroll;"></div>
-            <input id="comment-input" placeholder="Escribe tu comentario aquí"/>
-            <button onclick="handleOnclick();" style="max-width: 100px;">Enviar</button>
+            <div>
+                <p id="typewriter-3" class="glowing"></p>
+                <div style="display: flex;">
+                    <input style="flex: 1;" id="comment-input" placeholder="Escribe tu comentario aquí"/>
+                    <button onclick="handleOnclick();" style="max-width: 100px;">Enviar</button>
+                </div>
+            </div>
         </div>
     </section>
     <script src="//d3js.org/d3.v3.min.js"></script>
@@ -431,10 +436,12 @@
                 strings: "Haz clic en el lugar de la planta que quieras visitar.",
                 speed: 50,
                 waitUntilVisible: true,
-                afterComplete: async (step, instance) => {
-                    const nameElem = document.getElementById("name-wrapper");
-                    nameElem.removeAttribute("hidden");
-                }
+            }).go();
+
+            new TypeIt("#typewriter-3", {
+                strings: ["¿Qué piensas acerca de implementar la energía nuclear para generar energía?", "¡Queremos saber tu opinión!"],
+                speed: 50,
+                waitUntilVisible: true
             }).go();
 
             function onCheckedRadioButton(event) {
