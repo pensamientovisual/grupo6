@@ -70,7 +70,7 @@
 
     <section class="main" id="section4">
         <div class="navigation">
-            <h2 class="glowing">Vapor de agua</h2>
+            <h2 class="glowing">Cámara de vapor</h2>
             <a href="#section2">Inicio</a>
             <a href="#section3">⏮</a>
             <a href="#section5">⏭</a>
@@ -121,9 +121,26 @@
         </div>
         <div class="horizontal">
             <div>
-                <object type="image/svg+xml" data="./img/map.svg"></object>
-                <div class="circle-data" data-attr="act">
-                    <div class="circle" style="background-color: yellow;"></div><span class="circle-info">Activas</span>
+                <object id="svg-map" type="image/svg+xml" data="./img/map.svg"></object>
+                <div style="margin-top: 10px;">
+                    <span style="font-size: large; max-width: 100px;">Haz click en las opciones para mostrar información de cada una</span>
+                    <div class="circle-data" data-attr="act" style="margin-top: 20px;">
+                        <div class="circle" style="background-color: #C4F352;"></div>
+                        <span class="circle-info">Activas<br>Plantas nucleares siendo utilizadas.</span>
+                    </div>
+                    <div class="circle-data" data-attr="des">
+                        <div class="circle" style="background-color: #64E31A;"></div><span class="circle-info">Desmanteladas<br> El ciclo de vida de estas plantas ha terminado, por lo que se están desmantelando por seguridad.</span>
+                    </div>
+                    <div class="circle-data" data-attr="desc">
+                        <div class="circle" style="background-color: #2AB323;"></div><span class="circle-info">Desconectadas<br>El uso de estas plantas se ha suspendido por precaución o debido a una falla técnica.</span>
+                    </div>
+                    <div class="circle-data" data-attr="ctr">
+                        <div class="circle" style="background-color: #175F1C"></div><span class="circle-info">En construcción<br>Estas plantas están siendo construidas.</span>
+                    </div>
+                    <div class="circle-data" data-attr="acc">
+                        <div class="circle" style="background-color: #F13BFB;"></div><span class="circle-info">Accidentadas<br>Un accidente ocurrió en esta planta.</span>
+                    </div>
+
                 </div>
             </div>
             <div class="chat">
@@ -172,7 +189,7 @@
             <a href="#section7">⏭</a>
         </div>
         <div class="horizontal">
-            <div id="transformer"></div>
+            <object type="image/svg+xml" data="./img/graficos.svg"></object>
             <div class="chat">
                 <div class="yours messages">
                     <div class="message">
@@ -284,8 +301,17 @@
     <script src="assets/slider.js"></script>
     <script>
 
+        function onClick(){
+            // document.body.classList.remove("stop-scrolling");
+            document.getElementById("section2").scrollIntoView();
+        }
+
         window.onload = function() {
             const svgBaseDocument = document.getElementById("nuclear-plant").contentDocument;
+            const svgMapBaseDocument = document.getElementById("svg-map").contentDocument;
+
+            svgMapBaseDocument.getElementById("Capa_1").style.visibility = "hidden";
+
             svgBaseDocument.getElementById("Capa_XX").addEventListener("click", (e) => {
                 console.log(e.target);
                 document.getElementById("section3").scrollIntoView();
@@ -305,18 +331,49 @@
             svgBaseDocument.getElementById("Capa_3").addEventListener("click", () => {
                 document.getElementById("section6").scrollIntoView();
             });
-    
-            function onClick(){
-                // document.body.classList.remove("stop-scrolling");
-                document.getElementById("section2").scrollIntoView();
+
+            // make all map circles hidden
+            function reset() {
+                for (let index = 7; index < 12; index++) {
+                    svgMapBaseDocument.querySelectorAll(`.st${index}`).forEach(x => {
+                        x.style.visibility = "hidden";
+                    })
+                }
             }
+
+            reset();
 
             const circleData = document.querySelectorAll('.circle-data');
             circleData.forEach(el => {
                 el.addEventListener('click', event => {
                     event.preventDefault();
                     if (event.target !== el) {
-                        console.log('clicked');
+                        const elemData = el.getAttribute("data-attr");
+                        
+                        if (elemData === "act") {
+                            svgMapBaseDocument.querySelectorAll(".st10").forEach(x => {
+                                x.style.visibility = x.style.visibility === "initial" ? "hidden" : "initial";
+                            })
+                        } else if (elemData === "ctr") {
+                            svgMapBaseDocument.querySelectorAll(".st7").forEach(x => {
+                                x.style.visibility = x.style.visibility === "initial" ? "hidden" : "initial";
+                            })
+                        } else if (elemData === "des") {
+                            svgMapBaseDocument.querySelectorAll(".st9").forEach(x => {
+                                x.style.visibility = x.style.visibility === "initial" ? "hidden" : "initial";                            
+                            })
+
+                        } else if (elemData === "desc") {
+                            svgMapBaseDocument.querySelectorAll(".st8").forEach(x => {
+                                x.style.visibility = x.style.visibility === "initial" ? "hidden" : "initial";                            
+                            })
+
+                        } else if (elemData === "acc") {
+                            svgMapBaseDocument.querySelectorAll(".st11").forEach(x => {
+                                x.style.visibility = x.style.visibility === "initial" ? "hidden" : "initial";                            
+                            })
+                        }
+                        
                     }
                 })
             });
