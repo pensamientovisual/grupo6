@@ -21,37 +21,37 @@ function displayValue(e) {
   const sliderContent = document.getElementById("slider-content");
   switch (value) {
     case 1:
-      sliderImg.src = "../img/per1.png";
+      sliderImg.src = "./img/per1.png";
       sliderContent.innerHTML =
         "<span>[98 nSv/a - Radiación de un plátano,</span><br><span>1 mSv/a - Radiación emitida por un humano]</span>";
       break;
     case 2:
-      sliderImg.src = `../img/p${value}.png`;
+      sliderImg.src = `./img/p${value}.png`;
       sliderContent.innerHTML =
         "<span>46 mSv/a - Vivir cerca de Chernobyl.</span>";
       break;
     case 3:
-      sliderImg.src = `../img/p${value}.png`;
+      sliderImg.src = `./img/p${value}.png`;
       sliderContent.innerHTML =
         "<span>50 mSv/a -  Máxima carga radioactiva legal en el ambiente laboral para un año.</span>";
       break;
     case 4:
-      sliderImg.src = `../img/p${value}.png`;
+      sliderImg.src = `./img/p${value}.png`;
       sliderContent.innerHTML =
         "<span>100 mSv/a - Máxima carga radioactiva legal en el ambiente laboral para cinco años. Radiación promedio absorbida por un rescatista de Chernobyl.</span>";
       break;
     case 5:
-      sliderImg.src = `../img/p${value}.png`;
+      sliderImg.src = `./img/p${value}.png`;
       sliderContent.innerHTML =
         "<span>350 mSv/a - Vivir cerca del epicentro del desastre de Chernobyl</span>";
       break;
     case 6:
-      sliderImg.src = `../img/p${value}estasi.png`;
+      sliderImg.src = `./img/p${value}estasi.png`;
       sliderContent.innerHTML =
         "<span>1 Sv/a - Se contrae Síndrome de Irradiación Aguda</span>";
       break;
     case 7:
-      sliderImg.src = `../img/p${value}estasi.png`;
+      sliderImg.src = `./img/p${value}estasi.png`;
       sliderContent.innerHTML =
         "<span>[5 Sv/a - Dosis letal; probabilidad del 50% de morir en treinta días,</span><br><span>36 mSv/a - Dosis letal; la muerte ocurre en menos de 36 horas,</span><br><span>5.6 MSv/a - Radiación promedio dentro de un reactor nuclear]</span>";
       break;
